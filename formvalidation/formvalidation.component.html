@@ -1,0 +1,50 @@
+<div class="container">
+    <h2>Register</h2>
+    <form #frmRegister="ngForm" name="frmRegister">
+        <div class="form-group">
+            <label>Name</label>
+            <div>
+            <input type="text" #txtName="ngModel" ngModel name="txtName" class="form-control" required>
+        </div>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <div>
+        <input type="email" ngModel #txtEmail="ngModel" name="txtEmail" class="form-control" required>
+
+            </div> 
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" [disabled]="frmRegister.invalid">submit</button>
+            <button class="btn btn-success" [disabled]="frmRegister.pristine">save</button>
+        </div>
+    </form>
+    <div class="form-group">
+        <h2 id="demo">Validation Property</h2>
+        <table class="table table-hover">
+            <colgroup span="1" class="bg-warning"></colgroup>
+                <tr>
+                    <td>Pristine[Not Modified]</td>
+                    <td>{{frmRegister.pristine}}</td> 
+                </tr>
+                <tr>
+                    <td>Dirty [Modified]</td>
+                    <td>{{frmRegister.dirty}}</td>
+                </tr>
+                <tr>
+                    <td>Valid [All field valid]</td>
+                    <td>{{frmRegister.valid}}</td>
+                </tr>
+                <tr>
+                    <td>Invalid[ Any one field invalid]</td>
+                    <td>{{frmRegister.invalid}}</td>
+                </tr>
+                <tr>
+                    <td>Submitted </td>
+                    <td>{{frmRegister.submitted}}</td>
+                </tr>
+           
+        </table>
+    </div>
+
+</div>
